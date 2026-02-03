@@ -21,7 +21,29 @@ def game_cycle():
     pass
 
 def main():
-    pass
+    game_on = False
+    player_choosen = False
 
-read_file()
-draw_word()
+    print("------HangMan------")
+    print("(1) Start game")
+    print("(2) add word")
+    print("(3) exit game")
+
+    while player_choosen == False:
+        user_input = input("your choice: ")
+
+        match user_input:
+            case "1":
+                game_on = True
+                player_choosen = True
+            case "2":
+                player_choosen = True
+            case "3":
+                player_choosen = True
+            case _:
+                print("error try normal option")
+
+    while game_on == True:
+        pass
+
+main()
