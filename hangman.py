@@ -23,13 +23,17 @@ def game_cycle():
 def main():
     game_on = False
     player_choosen = False
-
-    print("------HangMan------")
-    print("(1) Start game")
-    print("(2) add word")
-    print("(3) exit game")
+    global played_letters
+    played_letters = []
+    global quessed_letters
+    quessed_letters = []
 
     while player_choosen == False:
+        
+        print("------HangMan------")
+        print("(1) Start game")
+        print("(2) add word")
+        print("(3) exit game")
         user_input = input("your choice: ")
 
         match user_input:
