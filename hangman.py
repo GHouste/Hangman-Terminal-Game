@@ -10,7 +10,11 @@ def read_file():
     word_list_txt.close()
 
 def write_to_file():
-    pass
+    word_list_txt = open("word list.txt", "a")
+    user_input = input(" What word you want to add: ")
+    user_input.lower()
+    word_list_txt.write(f"\n{user_input}")
+    word_list_txt.close()
 
 def draw_word():
     global choosen_word
@@ -62,4 +66,4 @@ def main():
     while game_on == True:
         pass
 
-main()
+write_to_file()
