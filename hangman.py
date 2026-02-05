@@ -9,11 +9,16 @@ def read_file():
         listed_words.append(lines.rstrip("\n"))
     word_list_txt.close()
 
-def write_to_file():
+def add_word():
+    read_file()
     word_list_txt = open("word list.txt", "a")
     user_input = input(" What word you want to add: ")
     user_input.lower()
-    word_list_txt.write(f"\n{user_input}")
+    if user_input in listed_words:
+        print("Word already is on the list")
+    else:
+        word_list_txt.write(f"\n{user_input}")
+        print(f'Word "{user_input}" have benn added to the list')
     word_list_txt.close()
 
 def draw_word():
@@ -58,6 +63,7 @@ def main():
                 print_word()
             case "2":
                 player_choosen = True
+                add_word()
             case "3":
                 player_choosen = True
             case _:
@@ -66,4 +72,4 @@ def main():
     while game_on == True:
         pass
 
-write_to_file()
+main()
