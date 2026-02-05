@@ -17,6 +17,15 @@ def draw_word():
     choosen_word = random.choice(listed_words)
     print(choosen_word)
 
+def print_word():
+    print_word = []
+    for letter in choosen_word:
+        if letter in quessed_letters:
+            print_word.append(letter)
+        else:
+            print_word.append("#")
+    print(f"your word: {print_word}")
+
 def game_cycle():
     pass
 
@@ -40,6 +49,9 @@ def main():
             case "1":
                 game_on = True
                 player_choosen = True
+                read_file()
+                draw_word()
+                print_word()
             case "2":
                 player_choosen = True
             case "3":
