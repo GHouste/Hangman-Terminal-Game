@@ -35,6 +35,88 @@ def print_word():
             print_word.append("#")
     print(f"your word: {print_word}")
 
+def draw_hangman(chances):
+    match chances:
+        case 7:
+             pass
+        case 6:
+             print("""
+                      _______
+                      |    \|
+                     ( )    |
+                     /|\    |
+                      |     |
+                     / \    |
+                            |
+                        ___/|\_
+                    """)
+        case 5:
+             print("""
+                      _______
+                      |    \|
+                     ( )    |
+                     /|\    |
+                      |     |
+                     / \    |
+                            |
+                        ___/|\_
+                    """)
+        case 4:
+             print("""
+                    
+                            
+                            
+                            |
+                            |
+                            |
+                            |
+                        ___/|\_
+                    """)
+        case 3:
+             print("""
+                     
+                            |
+                            |
+                            |
+                            |
+                            |
+                            |
+                        ___/|\_
+                    """)
+        case 2:
+             print("""
+                      _______
+                           \|
+                            |
+                            |
+                            |
+                            |
+                            |
+                        ___/|\_
+                    """)
+        case 1:
+             print("""
+                      _______
+                      |    \|
+                     ( )    |
+                     /|\    |
+                            |
+                            |
+                            |
+                        ___/|\_
+                    """)
+        case 0:
+            print("""
+                      _______
+                      |    \|
+                     ( )    |
+                     /|\    |
+                      |     |
+                     / \    |
+                            |
+                        ___/|\_
+                    """)
+
 def game_cycle():
     pass
 
@@ -45,7 +127,8 @@ def main():
     played_letters = []
     global quessed_letters
     quessed_letters = []
-
+    global chances
+    chances = 7
     while player_choosen == False:
         
         print("------HangMan------")
@@ -72,4 +155,5 @@ def main():
     while game_on == True:
         pass
 
+draw_hangman(0)
 main()
