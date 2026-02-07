@@ -41,38 +41,27 @@ def draw_hangman(chances):
              pass
         case 6:
              print("""
-                      _______
-                      |    \|
-                     ( )    |
-                     /|\    |
-                      |     |
-                     / \    |
-                            |
+                      
+                      
+                         
+                     
+                           
+                     
+                            
                         ___/|\_
                     """)
         case 5:
              print("""
-                      _______
-                      |    \|
-                     ( )    |
-                     /|\    |
-                      |     |
-                     / \    |
+                    
+                            
+                            
+                            
+                            |
+                            |
                             |
                         ___/|\_
                     """)
         case 4:
-             print("""
-                    
-                            
-                            
-                            |
-                            |
-                            |
-                            |
-                        ___/|\_
-                    """)
-        case 3:
              print("""
                      
                             |
@@ -83,10 +72,21 @@ def draw_hangman(chances):
                             |
                         ___/|\_
                     """)
-        case 2:
+        case 3:
              print("""
                       _______
                            \|
+                            |
+                            |
+                            |
+                            |
+                            |
+                        ___/|\_
+                    """)
+        case 2:
+             print("""
+                      _______
+                      |    \|
                             |
                             |
                             |
@@ -155,5 +155,4 @@ def main():
     while game_on == True:
         pass
 
-draw_hangman(0)
 main()
