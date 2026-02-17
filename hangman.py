@@ -22,6 +22,7 @@ def add_word():
     word_list_txt.close()
 
 def draw_word():
+    read_file()
     global choosen_word
     choosen_word = random.choice(listed_words)
     print(choosen_word)
@@ -118,7 +119,18 @@ def draw_hangman(chances):
                     """)
 
 def game_cycle():
-    pass
+    word_quessed = False
+    global chances
+    chances = 7
+    
+    
+    while word_quessed or chances > 0:
+        print_word()
+        user_input = input("Choose letter: ")
+        user_input.lower()
+        if user_input in choosen_word:
+            quessed_letters.append(user_input)
+
 
 def main():
     game_on = False
@@ -127,8 +139,7 @@ def main():
     played_letters = []
     global quessed_letters
     quessed_letters = []
-    global chances
-    chances = 7
+
     while player_choosen == False:
         
         print("------HangMan------")
@@ -141,9 +152,8 @@ def main():
             case "1":
                 game_on = True
                 player_choosen = True
-                read_file()
                 draw_word()
-                print_word()
+                game_cycle()
             case "2":
                 player_choosen = True
                 add_word()
