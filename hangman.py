@@ -34,7 +34,7 @@ def print_word():
             print_word.append(letter)
         else:
             print_word.append("#")
-    print(f"your word: {print_word}")
+    print(f"your word: {print_word}") #delete later
 
 def draw_hangman(chances):
     match chances:
@@ -120,25 +120,25 @@ def draw_hangman(chances):
 
 def game_cycle():
     word_quessed = False
-    global chances
     chances = 7
-    
+    global quessed_letters
+    quessed_letters = []
     
     while word_quessed or chances > 0:
         print_word()
         user_input = input("Choose letter: ")
         user_input.lower()
-        if user_input in choosen_word:
-            quessed_letters.append(user_input)
+        if user_input in choosen_word :
+            if user_input not in quessed_letters:
+                quessed_letters.append(user_input)
+        else:
+            chances = chances - 1
+            draw_hangman(chances)
 
 
 def main():
     game_on = False
     player_choosen = False
-    global played_letters
-    played_letters = []
-    global quessed_letters
-    quessed_letters = []
 
     while player_choosen == False:
         
