@@ -119,25 +119,32 @@ def draw_hangman(chances):
                     """)
 
 def game_cycle():
-    word_quessed = False
     chances = 7
     global quessed_letters
     quessed_letters = []
-    
-    while word_quessed or chances > 0:
+    choosen_word_list = list(choosen_word)
+    while len(quessed_letters) != len(choosen_word_list):
         print_word()
+        print (len(choosen_word_list))
+        print(len(quessed_letters))
         user_input = input("Choose letter: ")
         user_input.lower()
         if user_input in choosen_word :
             if user_input not in quessed_letters:
                 quessed_letters.append(user_input)
+                print(quessed_letters)
+
         else:
             chances = chances - 1
             draw_hangman(chances)
 
+    if len(quessed_letters) == len(choosen_word_list):
+        print("You Guessed!!!")
+    elif chances == 0:
+        print("You Lose!!!")
+
 
 def main():
-    game_on = False
     player_choosen = False
 
     while player_choosen == False:
@@ -161,8 +168,5 @@ def main():
                 player_choosen = True
             case _:
                 print("error try normal option")
-
-    while game_on == True:
-        pass
 
 main()
