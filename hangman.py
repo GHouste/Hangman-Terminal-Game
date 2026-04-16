@@ -18,7 +18,7 @@ def add_word():
         print("Word already is on the list")
     else:
         word_list_txt.write(f"\n{user_input}")
-        print(f'Word "{user_input}" have benn added to the list')
+        print(f'Word "{user_input}" have been added to the list')
     word_list_txt.close()
 
 def draw_word():
@@ -123,7 +123,8 @@ def game_cycle():
     global quessed_letters
     quessed_letters = []
     choosen_word_list = list(choosen_word)
-    while len(quessed_letters) != len(choosen_word_list):
+    
+    while len(quessed_letters) != len(choosen_word_list) or chances != 0 :
         print_word()
         print (len(choosen_word_list))
         print(len(quessed_letters))
@@ -133,7 +134,7 @@ def game_cycle():
             if user_input not in quessed_letters:
                 quessed_letters.append(user_input)
                 print(quessed_letters)
-
+                
         else:
             chances = chances - 1
             draw_hangman(chances)
