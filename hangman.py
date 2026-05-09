@@ -25,7 +25,6 @@ def draw_word():
     read_file()
     global choosen_word
     choosen_word = random.choice(listed_words)
-    print(choosen_word) # delete later
 
 def print_word():
     print_word = []
@@ -34,7 +33,7 @@ def print_word():
             print_word.append(letter)
         else:
             print_word.append("#")
-    print(f"your word: {print_word}") #delete later
+    print(f"your word: {print_word}")
 
 def draw_hangman(chances):
     match chances:
@@ -127,18 +126,15 @@ def game_cycle():
     
     while game_cycle == True:
         print_word()
-        print (len(choosen_word_list)) # delete later
-        print(len(quessed_letters)) # delete later
         user_input = input("Choose letter: ")
         user_input.lower()
+
         if user_input in choosen_word :
             if user_input not in quessed_letters:
                 quessed_letters.append(user_input)
-                print(quessed_letters)
-                
+                print(quessed_letters)        
         else:
             chances = chances - 1
-            print(f"test chanse {chances}") # delete later
             draw_hangman(chances)
 
         if chances == 0:
