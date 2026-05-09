@@ -1,3 +1,10 @@
 game
 computer
 water
+television
+bottle
+uranium
+spoon
+table
+reactor
+hawk
